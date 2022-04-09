@@ -122,6 +122,8 @@ class VSCodeCcrRule(MergeRule):
               rdescript=
               "VS Code: Select between parentheses inclusive using 'quick and simple text selection' VScode extension"
               ),
+        "run terminal":
+            R(Key("c-backtick, up, enter")),
     }
     extras = [
         Dictation("text"),

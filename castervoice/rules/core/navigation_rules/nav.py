@@ -179,7 +179,13 @@ class Navigation(MergeRule):
               rdescript="press modifiers plus buttons from button_dictionary_500_modifier"),
         "<modifier> <button_dictionary_1_modifier>":
             R(Key("%(modifier)s-%(button_dictionary_1_modifier)s"),
-              rdescript="press modifiers plus buttons from button_dictionary_1_modifier"),              
+              rdescript="press modifiers plus buttons from button_dictionary_1_modifier"),          
+
+        # myCommands
+        "bark [<nnavi500>]":
+            R(Key("end, cs-up:%(nnavi500)s, s-home")),    
+        "mark [<nnavi500>]":
+            R(Key("cs-up:%(nnavi500)s, s-home")),    
     }
     
     tell_commands_dict = {"dock": ";", "doc": ";", "sink": "", "com": ",", "deck": ":"}

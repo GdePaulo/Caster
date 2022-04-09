@@ -133,6 +133,8 @@ class Python(MergeRule):
             R(Text("__%(binary_meth)s__(self, other):")),
         "meth [<unary_meth>]":
             R(Text("__%(unary_meth)s__(self):")),
+        "main":
+            R(Text("if __name__ == \"__main__\":") + Key("enter")),
     }
 
     extras = [

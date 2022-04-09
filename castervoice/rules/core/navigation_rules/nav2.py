@@ -48,7 +48,7 @@ class NavigationNon(MappingRule):
             R(Key("shift:down") + Mouse("right") + Key("shift:up")),
         "curse <direction> [<direction2>] [<nnavi500>] [<dokick>]":
             R(Function(navigation.curse)),
-        "scree <direction> [<nnavi500>]":
+        "(scree | meet) <direction> [<nnavi500>]":
             R(Function(navigation.wheel_scroll)),
         "scree <direction> <time_in_seconds>":
             R(AsynchronousAction(
