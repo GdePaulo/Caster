@@ -186,6 +186,10 @@ class Navigation(MergeRule):
             R(Key("end, cs-up:%(nnavi500)s, s-home")),    
         "mark [<nnavi500>]":
             R(Key("cs-up:%(nnavi500)s, s-home")),    
+        "crack [<nnavi10>]":
+            R(Key("s-end:%(nnavi10)s, backspace")),
+        "tsuku":
+            R(Mouse("left") + Mouse("left") + Key("s-end, c-c")),
     }
     
     tell_commands_dict = {"dock": ";", "doc": ";", "sink": "", "com": ",", "deck": ":"}

@@ -124,6 +124,8 @@ class VSCodeCcrRule(MergeRule):
               ),
         "run terminal":
             R(Key("c-backtick, up, enter")),
+        "run all":
+            R(Key("escape, c-a, c-enter")),
     }
     extras = [
         Dictation("text"),
