@@ -23,6 +23,10 @@ class GitBashRule(MappingRule):
             R(Key("g, i, t, space, a, d, d, space, dot")),
         "(git|get) add all":
             R(Key(GIT_ADD_ALL)),
+        "(git|get) add staged":
+            R(Key("g, i, t, space, a, d, d, space, minus, u")),
+        "(git|get) add python":
+            R(Key("g, i, t, space, a, d, d, space, \, *, ., p, y")),
         "(git|get) commit all":
             R(Key("%s, ;, space, %s" % (GIT_ADD_ALL, GIT_COMMIT))),
         "(git|get) status":

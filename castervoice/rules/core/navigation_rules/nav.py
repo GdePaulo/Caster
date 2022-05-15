@@ -31,6 +31,10 @@ from castervoice.lib.merge.state.actions import AsynchronousAction, ContextSeeke
 from castervoice.lib.merge.state.actions2 import UntilCancelled
 from castervoice.lib.merge.state.short import S, L, R
 
+
+from castervoice.lib import settings, utilities
+from subprocess import Popen
+
 _tpd = text_punc_dict()
 _dtpd = double_text_punc_dict()
 
@@ -45,8 +49,16 @@ for key, value in _dtpd.items():
         raise Exception(msg.format(str(value)))
 
 
+# Functionality to open git bash in the current directory. Inspired from the bring me functionality and other files utilizing Git Bash in the repo. Had to figure out how to implement functions.
+def openGitBash():
+    TERMINAL_PATH = settings.SETTINGS["paths"]["TERMINAL_PATH"]
+    Key("c-l/60").execute()
+    files = utilities.get_selected_files(folders=True)
+    path = files[0] if files else None
+    terminal = Popen([TERMINAL_PATH], cwd=path)
 class Navigation(MergeRule):
     pronunciation = "navigation"
+
 
     mapping = {
         # "periodic" repeats whatever comes next at 1-second intervals until "terminate"
@@ -190,6 +202,8 @@ class Navigation(MergeRule):
             R(Key("s-end:%(nnavi10)s, backspace")),
         "tsuku":
             R(Mouse("left") + Mouse("left") + Key("s-end, c-c")),
+        "bash here":
+            R(Function(openGitBash)),
     }
     
     tell_commands_dict = {"dock": ";", "doc": ";", "sink": "", "com": ",", "deck": ":"}
