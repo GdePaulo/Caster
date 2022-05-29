@@ -1,4 +1,3 @@
-# thanks to Casper for contributing commands to this.
 from dragonfly import Repeat, Dictation, Choice, ShortIntegerRef
 
 from castervoice.lib.actions import Key
@@ -126,6 +125,10 @@ class VSCodeCcrRule(MergeRule):
             R(Key("c-backtick, up, enter")),
         "run all":
             R(Key("escape, c-a, c-enter")),
+        "clear all outputs":
+            R(Key("escape, a-del")),
+        "restart kernel":
+            R(Key("cs-p/20, r, e, s, t, a, r, t,  , k, e, r, n, e, l, enter")),
     }
     extras = [
         Dictation("text"),
