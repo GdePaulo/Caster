@@ -134,6 +134,12 @@ class Java(MergeRule):
             R(Text(" instanceof ")),
         "dock string":
             R(Text("/***/") + Key("left,left,enter")),
+        "extends":
+            R(Text(" extends ")),
+        "interface":
+            R(Text("interface ")),
+        "implements":
+            R(Text("implements ")),
     }
 
     extras = []

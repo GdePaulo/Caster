@@ -125,10 +125,12 @@ class VSCodeCcrRule(MergeRule):
             R(Key("c-backtick, up, enter")),
         "run all":
             R(Key("escape, c-a, c-enter")),
-        "clear all outputs":
+        "clear current output":
             R(Key("escape, a-del")),
         "restart kernel":
             R(Key("cs-p/20, r, e, s, t, a, r, t,  , k, e, r, n, e, l, enter")),
+        "clear all outputs":
+            R(Key("cs-p/20, c, l, e, a, r,  , o, u, t, p, u, t, s,  , o, f,  , a, l, l,  , c, e, l, l, s, enter")),
     }
     extras = [
         Dictation("text"),
